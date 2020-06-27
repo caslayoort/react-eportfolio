@@ -1,6 +1,5 @@
 import React from "react";
 import '../bootstrap-3.4.1/css/bootstrap.css';
-import image from'../images/me.jpg';
 
 export class CV extends React.Component {
     render() {

@@ -8,6 +8,8 @@ html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  width: 100%;
+  height: 100%;
 }
 body {
   margin: 0;
@@ -6837,9 +6839,9 @@ button.close {
 /* custom */
 
 .page {
-  position: relative;
-  height: 100vh;
-  width: 100vw;
+  position: absolute;
+  height: 100%;
+  width: 100%;
   /* background-image: linear-gradient(to bottom right, #FFFFFF, #3a7bFF); */
   background-repeat: repeat;
   background-position: center;
@@ -6888,31 +6890,25 @@ button.close {
   font-size: 120%;
 }
 
-/* Overlay */
+/* Menu */
 .overlay_button_text {
   text-decoration: underline;
   color: #ffffff;
 }
 
 @media (orientation: landscape) {
-  .menu_bar {
-    height: 8vh;
-    width: 100vw;
-    display: block;
-  }
 
   .menu_height {
     height: 8vh;
   }
 
   .content_container {
-    height: 92vh;
+    height: 89vh;
     width: 100vw;
-    overflow: auto;
   }
 
   .landscape_content_height {
-    height: 90vh;
+    height: 89vh;
   }
 
   .hide_portrait {
@@ -6946,12 +6942,6 @@ button.close {
   }
 }
 @media (orientation: portrait) {
-  .menu_bar {
-    height: 7vh;
-    width: 100vw;
-    margin-bottom: 2vh;
-    display: block;
-  }
 
   .menu_height {
     height: 7vh;
@@ -6960,7 +6950,9 @@ button.close {
   .content_container {
     height: 90vh;
     width: 100vw;
-    overflow: auto;
+    overflow-y: visible;
+    display: flex;
+    flex-direction: column;
   }
 
   .portrait_content_height {

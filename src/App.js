@@ -1,17 +1,24 @@
 import React from 'react';
 import {Content} from './components/body';
-import {Menu,Overlay} from './components/menu';
 import './bootstrap-3.4.1/css/bootstrap.css';
 
-function App() {
-  return (
-    <div className='page'>
-      <Menu/>
-      <Content/>
+export class App extends React.Component {
+    componentWillMount() {
+      this.getData()
+    }
+  
+    getData() {
+    var xhttp;
+    xhttp=new XMLHttpRequest();
+    xhttp.open("GET", "https://www.caslayoort.nl/api", true);
+    xhttp.send();
+    }
 
-      <Overlay/>
-    </div>
-  );
+    render() {
+        return (
+            <div className='page' style={{overflowX: 'hidden', overflowY: 'auto'}}>
+              <Content/>
+            </div>
+        );
+    }
 }
-
-export default App;

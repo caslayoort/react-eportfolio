@@ -87,7 +87,8 @@ export class Popup extends React.Component {
             marginTop: 'auto',
             marginBottom: 'auto',
             zIndex: '1',
-            overflow: 'auto',
+            overflowY: 'auto',
+            overflowX: 'hidden',
         };
 
         var height,width;
@@ -106,15 +107,21 @@ export class Popup extends React.Component {
         }
 
         var pos;
-        if (this.state.position == 'left') {
+        if (this.state.position === 'left') {
             pos = {
                 marginRight: 'auto',
                 left: '0'
             };
-        } else if (this.state.position == 'right') {
+        } else if (this.state.position === 'right') {
             pos = {
                 marginLeft: 'auto',
                 left: '0'
+            };
+        } else if (this.state.position === 'top') {
+            pos = {
+                marginLeft: 'auto',
+                marginRight: 'auto',
+                marginTop: '0'
             };
         } else {
             pos = {
@@ -133,7 +140,7 @@ export class Popup extends React.Component {
                     className={this.props.className}
                     style={Object.assign(defaultstyle, height, width, pos, this.props.style)}
                 >
-                    <div style={row}>
+                    <div style={{position: "sticky", top: 0}}>
                         <Close/>
                     </div>
                     <div style={row}>
@@ -165,6 +172,26 @@ export class Trigger extends React.Component {
     }
 }
 
+export class Trigger2 extends React.Component {
+    render(){
+        const popupcontent = <div>{this.props.setContent}</div>;
+        function action() {
+            ReactDOM.render(
+            <Popup
+                /* styling */
+                className='col-xs-12 col-sm-12 col-md-12 col-lg-12'
+                height='100%'
+                position='top'
+                backgroundColor='rgba(0, 0, 0, 1)'
+            >{popupcontent}</Popup>, document.getElementById('root').appendChild(document.createElement('div')));
+        }
+
+        return (
+            <div style={{cursor: 'pointer'}} onClick={action}>{this.props.children}</div>
+        );
+    }
+}
+
 class Close extends React.Component {
     render(){
         const style = {
@@ -173,7 +200,8 @@ class Close extends React.Component {
             top: '0',
             right: '0',
             float: 'right',
-            marginLeft: 'auto'
+            marginLeft: 'auto',
+            postion: 'relative'
         };
 
         function action() {

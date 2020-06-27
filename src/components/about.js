@@ -10,8 +10,8 @@ export class About extends React.Component {
         projecten op een arduino uno. Toen ik Informatica ging studeren ben ik ook op zoek gegaan naar werk richting mijn studie
         met de reden dat het mij erg interessant leek om te zien hoe het in de praktijk er aan toe gaat. Na meer dan een jaar
         bij Initworks B.V. te hebben gewerkt in het operations en het stand-by team heb ik veel ervaring opgedaan in de wereld
-        van webhosting. Momenteel onderhoud ik systemen van diverse klanten en heb ik 2 andere collega's getraind zodat ze
-        ook mee konden draaien in het operations team. In de toekomst lijkt het mij erg interessant om richting DevOps te gaan
+        van webhosting. Momenteel onderhoud ik systemen van diverse klanten en heb ik twee andere collega's getraind zodat ze
+        ook mee kunnen draaien in het operations team. In de toekomst lijkt het mij erg interessant om richting DevOps te gaan
         omdat ik de combinatie van het ontwikkelen van applicaties en het onderhouden ervan erg leuk vind.`;
 
         return (

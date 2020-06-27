@@ -5,6 +5,7 @@ import {Opendag} from './ervaring/opendag.js';
 import {Ovnotifier} from './ervaring/ovnotifier.js';
 import {Eportfolio} from './ervaring/eportfolio.js';
 import {PublicScripts} from './ervaring/publicscripts.js';
+import {Webhosting} from './ervaring/webhosting.js';
 
 export class Ervaring extends React.Component {
     render() {
@@ -40,6 +41,13 @@ export class Ervaring extends React.Component {
                             >
                                 <PublicScripts />
                             </Container>
+
+                            <Container
+                                title='Web en applicatie beheer'
+                                shortDescription='Het beheren van de infrastructuren en applicaties van klanten.'
+                            >
+                                <Webhosting />
+                            </Container>
                 </div>
             </div>
         );
@@ -57,7 +65,7 @@ class Title extends React.Component {
                 '>
                     <h1>Ervaring</h1>
                     <br/>
-                    <h3>Hieronder staan een aantal projecten die ik gedaan heb, als u er een interessant vind kunt u er op klikken om er meer over te weten te komen.</h3>
+                    <h3>Hieronder staan een aantal projecten en andere ervaringen die ik heb opgedaan. Voor meer informatie kunt u op het item klikken.</h3>
                     <br/>
                 </div>
             </div>
@@ -69,12 +77,14 @@ class Container extends React.Component {
     render() {
         const content = <div>{this.props.children}</div>;
         return (
-            <div>
+            <div className='
+            col-xs-8 col-sm-8 col-md-8 col-lg-8
+            col-xs-offset-2 col-sm-offset-2 col-md-offset-2 col-lg-offset-2
+            '>
                 <Trigger setContent={content}>
                     <div className='row'>
                         <div className='
-                            col-xs-8 col-sm-4 col-md-4 col-lg-4
-                            col-xs-offset-2 col-sm-offset-4 col-md-offset-4 col-lg-offset-4
+                            col-xs-12 col-sm-12 col-md-12 col-lg-12
                             ervaring_component_head text-center
                         '>
                             <h4><strong>{this.props.title}</strong></h4>
@@ -82,8 +92,7 @@ class Container extends React.Component {
                     </div>
                     <div className='row'>
                         <div className='
-                            col-xs-8 col-sm-4 col-md-4 col-lg-4
-                            col-xs-offset-2 col-sm-offset-4 col-md-offset-4 col-lg-offset-4
+                            col-xs-12 col-sm-12 col-md-12 col-lg-12
                             ervaring_component_body
                         '>
                             <p>{this.props.shortDescription}</p>
